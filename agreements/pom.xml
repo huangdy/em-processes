@@ -4,15 +4,27 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.leidos.xchangecore.core.em</groupId>
-        <artifactId>processes</artifactId>
+        <groupId>com.leidos.xchangecore.core</groupId>
+        <artifactId>em-processes</artifactId>
         <version>1.0.0</version>
     </parent>
 
-    <groupId>com.leidos.xchangecore.core.em.processes</groupId>
-    <artifactId>agreements</artifactId>
+    <artifactId>em-agreements</artifactId>
     <packaging>jar</packaging>
     <name>xChangeCore's processes/agreements</name>
-    <version>${em.version}</version>
+    <version>${em-processes.version}</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.leidos.xchangecore.core</groupId>
+            <artifactId>em-services</artifactId>
+            <version>${em-services.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.leidos.xchangecore.core</groupId>
+            <artifactId>infra-services</artifactId>
+            <version>${infra-services.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>

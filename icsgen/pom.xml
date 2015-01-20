@@ -4,15 +4,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.leidos.xchangecore.core.em</groupId>
-        <artifactId>processes</artifactId>
+        <groupId>com.leidos.xchangecore.core</groupId>
+        <artifactId>em-processes</artifactId>
         <version>1.0.0</version>
     </parent>
 
-    <groupId>com.leidos.xchangecore.core.em.processes</groupId>
-    <artifactId>icsgen</artifactId>
+    <artifactId>em-icsgen</artifactId>
     <packaging>jar</packaging>
     <name>xChangeCore's processes/icsgen jar</name>
-    <version>${em.version}</version>
+    <version>${em-processes.version}</version>
 
 </project>

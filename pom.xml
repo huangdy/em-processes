@@ -3,11 +3,17 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.leidos.xchangecore.core.em</groupId>
-    <artifactId>processes</artifactId>
+    <parent>
+        <groupId>com.leidos.xchangecore.core</groupId>
+        <artifactId>parent</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+
+    <artifactId>em-processes</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0</version>
-    <name>xChangeCore's POM for processes</name>
+    <name>xChangeCore's POM for em-processes</name>
 
     <modules>
         <module>agreements</module>
@@ -16,120 +22,32 @@
         <module>ipaws</module>
     </modules>
 
-    <properties>
-        <spring.version>2.5.6</spring.version>
-        <spring.security.version>2.0.4</spring.security.version>
-        <spring.integrations.version>1.0.4.RELEASE</spring.integrations.version>
-        <gx.version>1.2.6</gx.version>
-        <xmlbeans-em.version>1.1.4</xmlbeans-em.version>
-        <xmlbeans-have.version>1.1.2</xmlbeans-have.version>
-        <xmlbeans-infrastructure.version>1.2.1</xmlbeans-infrastructure.version>
-        <xmlbeans-edxl_rm.version>1.0.0</xmlbeans-edxl_rm.version>
-        <xmpp.groupId>com.leidos.xchangecore.xmpp</xmpp.groupId>
-        <infrastructure.version>1.2.0</infrastructure.version>
-        <infrastructure.xmpp.version>1.2.0</infrastructure.xmpp.version>
-        <infrastructure.groupId>com.leidos.xchangecore.core.infrastructure</infrastructure.groupId>
-        <em.version>1.2.0</em.version>
-        <em-war.version>1.1.1</em-war.version>
-        <context.filter.value>This is just to force the context to be reloaded</context.filter.value>
-    </properties>
-
-    <repositories>
-        <repository>
-            <id>xchangecore-mvn-repo</id>
-            <url>https://github.com/huangdy/xchangecore-mvn-repo/raw/master</url>
-        </repository>
-    </repositories>
-
     <dependencies>
-
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.4</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <version>2.5.6</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.integration</groupId>
-            <artifactId>spring-integration-core</artifactId>
-            <version>${spring.integrations.version}</version>
-            <type>jar</type>
-        </dependency>
-
-        <dependency>
-            <groupId>com.leidos.xchangecore.core.em</groupId>
-            <artifactId>xmlbeans-em</artifactId>
-            <version>${xmlbeans-em.version}</version>
+            <groupId>com.leidos.xchangecore.core</groupId>
+            <artifactId>infra-messages</artifactId>
+            <version>${infra-messages.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.leidos.xchangecore.core.em</groupId>
-            <artifactId>xmlbeans-have</artifactId>
-            <version>${xmlbeans-have.version}</version>
+            <groupId>com.leidos.xchangecore.core</groupId>
+            <artifactId>infra-services</artifactId>
+            <version>${infra-services.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.leidos.xchangecore.core.em</groupId>
-            <artifactId>xmlbeans-edxl_rm</artifactId>
-            <version>${xmlbeans-edxl_rm.version}</version>
+            <groupId>com.leidos.xchangecore.core</groupId>
+            <artifactId>em-services</artifactId>
+            <version>${em-services.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.leidos.xchangecore.core.em</groupId>
-            <artifactId>services</artifactId>
-            <version>${em.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.leidos.xchangecore.core.infrastructure</groupId>
+            <groupId>com.leidos.xchangecore.core</groupId>
             <artifactId>xmlbeans-infrastructure</artifactId>
             <version>${xmlbeans-infrastructure.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.leidos.xchangecore.core.infrastructure</groupId>
-            <artifactId>messages</artifactId>
-            <version>${infrastructure.version}</version>
+            <groupId>com.leidos.xchangecore.core</groupId>
+            <artifactId>xmlbeans-em</artifactId>
+            <version>${xmlbeans-em.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.leidos.xchangecore.core.infrastructure</groupId>
-            <artifactId>services</artifactId>
-            <version>${infrastructure.version}</version>
-        </dependency>
-
     </dependencies>
-
-    <build>
-        <resources>
-            <resource>
-                <directory>${basedir}/src/main/resources</directory>
-            </resource>
-        </resources>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.2</version>
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.4.2</version>
-                <configuration>
-                    <!-- forkMode and MaxPermSize are set to overcome OutOfMemory exceptions -->
-                    <forkMode>once</forkMode>
-                    <argLine>-XX:MaxPermSize=128M</argLine>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>
