@@ -150,7 +150,7 @@ public class AutoShareIncidents {
             points[1] = directoryService.getCoreConfig(agreement.getRemoteCorename()).getLongitude();
             logger.debug("getCoresToShareTo: get remote core's lat/lon: " + points[0] + "/" +
                 points[1]);
-            if (AgreementMatcher.isMatch(points, agreement.getShareRules(), incidentDoc)) {
+            if (AgreementMatcher.isRuleMatched(points, agreement.getShareRules(), incidentDoc)) {
                 cores.add(agreement.getRemoteCorename());
             }
         }
