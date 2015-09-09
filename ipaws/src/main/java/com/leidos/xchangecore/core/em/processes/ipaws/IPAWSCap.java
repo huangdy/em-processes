@@ -27,7 +27,7 @@ import x1.oasisNamesTcEmergencyCap1.AlertDocument.Alert;
  * to fires the method getCAPMessages at set interval. The spring bean config file is in
  * services/contexts/applicationContext-processes.xml. Spring calls startGettingMessages() at the
  * beginning and then call getCAPMessages() at intervals. It uses the IPAWSSpringClient class to
- * send SOAP messages to IPAWS. It uses the IPAWSAlertWorkProduct class to communicates with UICDS
+ * send SOAP messages to IPAWS. It uses the IPAWSAlertWorkProduct class to communicates with XchangeCore
  * services.
  */
 public class IPAWSCap {
@@ -134,7 +134,7 @@ public class IPAWSCap {
                     this.lastUpdate = latest;
                 }
 
-                // synchronize the alerts between ipaws and uicds
+                // synchronize the alerts between ipaws and XchangeCore
                 synchronizeAlertsWithUICDS(alerts);
             }
         }
@@ -183,7 +183,7 @@ public class IPAWSCap {
                 alerts = getCapMessagesByCogID(this.cogs);
             }
 
-            // synchronize the alerts between ipaws and uicds
+            // synchronize the alerts between ipaws and XchangeCore
             if (alerts != null) {
                 log.info("Retrieved " + alerts.length + " original CAP messages from IPAWS");
 
@@ -417,7 +417,7 @@ public class IPAWSCap {
         // to start, this list is empty
         ArrayList<String> inIPAWSnotUICDSList = new ArrayList<String>();
 
-        // to start, this set contains all alerts in UICDS
+        // to start, this set contains all alerts in XchangeCore
         Set<String> inUICDSnotIPAWSSet = this.alertWorkProduct.getAlertWorkProduct();
         // log.info("inUICDSnotIPAWSSet size:"+inUICDSnotIPAWSSet.size());
         // go through the array of ipaws alert

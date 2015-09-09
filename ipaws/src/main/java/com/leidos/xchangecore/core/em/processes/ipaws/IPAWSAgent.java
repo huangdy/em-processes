@@ -18,7 +18,7 @@ import org.slf4j.LoggerFactory;
  * Spring calls startGettingMessages() at the beginning and then call getCAPMessages()
  * at intervals.
  * It uses the IPAWSSpringClient class to send SOAP messages to IPAWS.
- * It uses the IPAWSAlertWorkProduct class to communicates with UICDS services.  
+ * It uses the IPAWSAlertWorkProduct class to communicates with XchangeCore services.  
  */
 public class IPAWSAgent {
 

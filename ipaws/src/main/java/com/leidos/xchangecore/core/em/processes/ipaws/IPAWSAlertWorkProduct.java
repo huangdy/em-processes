@@ -21,7 +21,7 @@ import com.saic.precis.x2009.x06.base.NamespaceMapItemType;
 import com.saic.precis.x2009.x06.base.NamespaceMapType;
 
 /**
- * class IPAWSAlertWorkProduct accesses uicds services for IPAWS
+ * class IPAWSAlertWorkProduct accesses XchangeCore services for IPAWS
  */
 public class IPAWSAlertWorkProduct {
 
@@ -54,10 +54,10 @@ public class IPAWSAlertWorkProduct {
     }
 
     /**
-     * method findAlertInUICDS checks whether the alert is already in UICDS
+     * method findAlertInUICDS checks whether the alert is already in XchangeCore
      *
      * @param String alertId the alert id to check
-     * @return boolean true if it already is in UICDS, false if not
+     * @return boolean true if it already is in XchangeCore, false if not
      */
     public boolean findAlertInUICDS(String alertId) {
 
@@ -68,7 +68,7 @@ public class IPAWSAlertWorkProduct {
      * method getAlertFromWP
      * return the alert from the alert wp in the alertWpTable
      * @param String alertId
-     * @return Alert the alert in UICDS with id alertId
+     * @return Alert the alert in XchangeCore with id alertId
      */
     public Alert getAlertFromWP(String alertId) {
 
@@ -82,9 +82,9 @@ public class IPAWSAlertWorkProduct {
     }
 
     /**
-     * method getAlertWorkProduct retrieve all alert work products in UICDS
+     * method getAlertWorkProduct retrieve all alert work products in XchangeCore
      *
-     * @return WorkProduct[] array of alert workproducts in UICDS
+     * @return WorkProduct[] array of alert workproducts in XchangeCore
      */
     public Set<String> getAlertWorkProduct() {
 
@@ -120,12 +120,12 @@ public class IPAWSAlertWorkProduct {
     }
 
     /**
-     * method createAlert creates a alert work productin UICDS. It tries to find the alert work
+     * method createAlert creates a alert work productin XchangeCore. It tries to find the alert work
      * product by alert identifier. If it found it, then it closes and archive the work product. It
      * then create a new alert work product.
      *
      * @param String alertID the alert identifier
-     * @pram Alert alert the Alert object to be created in UICDS
+     * @pram Alert alert the Alert object to be created in XchangeCore
      */
     public void updateAlertWorkProduct(String alertID, Alert alert) {
 

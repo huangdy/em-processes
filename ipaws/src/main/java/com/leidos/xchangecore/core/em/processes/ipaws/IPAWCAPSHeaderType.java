@@ -42,7 +42,8 @@ class IPAWSCAPHeaderType
         logonUserElement.addTextNode("dmopentester");
         name = new QName("http://gov.fema.dmopen.services/DMOPEN_CAPService/", "logonCogId", "dmop");
         SOAPElement logonCogIdElement = headerElement.addChildElement(name);
-        logonCogIdElement.addTextNode("120018");
+        //Replace your own COGS Id below
+        logonCogIdElement.addTextNode("XXXXXX");
     }
 
     private static Logger log = LoggerFactory.getLogger(IPAWSCAPHeaderType.class);

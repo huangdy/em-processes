@@ -47,7 +47,8 @@ implements ClientInterceptor {
             "logonCogId",
             "dmop");
         SOAPElement logonCogIdElement = headerElement.addChildElement(name);
-        logonCogIdElement.addTextNode("120018");
+        //Replace XXXXXX with your own COGS Id below
+        logonCogIdElement.addTextNode("XXXXXX");
     }
 
     private static Logger log = LoggerFactory.getLogger(IPAWSEDXLHeaderType.class);

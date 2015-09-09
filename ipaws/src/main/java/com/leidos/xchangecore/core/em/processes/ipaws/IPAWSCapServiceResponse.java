@@ -39,7 +39,7 @@ public class IPAWSCapServiceResponse {
      * method getAckFromResponse
      *
      * @param XmlObject xmlObjResponse the response object from IPAWS
-     * @return boolean true if the return reponse is parsed successfully, else false. parses the
+     * @return boolean true if the return response is parsed successfully, else false. parses the
      *         getACK response
      */
     public static boolean getAckFromResponse(XmlObject xmlObjResponse) {

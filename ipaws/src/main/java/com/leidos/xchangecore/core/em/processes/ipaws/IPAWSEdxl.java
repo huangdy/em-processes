@@ -50,8 +50,9 @@ public class IPAWSEdxl {
 
     IPAWSCap ipawsCap;
     Calendar lastUpdate = null;
-    String cogs = "120018";
-    String postToCogs = "120018";
+    //Replace XXXXXX with your own COGS Id
+    String cogs = "XXXXXX";
+    String postToCogs = "XXXXXX";
 
     String firstRetrievePeriod = "30";
     HashSet<String> uicdsSet = new HashSet<String>();
@@ -345,7 +346,7 @@ public class IPAWSEdxl {
         if (edxls != null) {
             for (EDXLDistribution edxl : edxls) {
 
-                // check if the message originated from uicds
+                // check if the message originated from XchangeCore
                 if (uicdsSet.contains(edxl.getDistributionID())) {
                     uicdsSet.remove(edxl.getDistributionID());
                     continue;
@@ -449,7 +450,7 @@ public class IPAWSEdxl {
         boolean ret = getEDXLACK();
         if (ret) {
 
-            // get the broadcast messages in uicds and send them to ipaws
+            // get the broadcast messages in XchangeCore and send them to ipaws
             getBroadcastMessagesForCogs();
 
             // get the messages from ipaws
@@ -481,7 +482,7 @@ public class IPAWSEdxl {
                 edxls = getEdxlMessagesByCogID(cogs);
             }
 
-            // synchronize the alerts between ipaws and uicds
+            // synchronize the alerts between ipaws and XchangeCore
             if (edxls != null) {
                 log.info("Retrieved " + edxls.length +
                          " original EDXL distribution messages from IPAWS");
@@ -498,7 +499,7 @@ public class IPAWSEdxl {
                 lastUpdate = latest;
             }
 
-            // broadcast to uicds
+            // broadcast to XchangeCore
             processEDXL(edxls);
         }
 
